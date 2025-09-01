@@ -8,7 +8,23 @@
 
 
 
-<app-navbar *ngIf="isLoggedIn"></app-navbar>
+<!-- <app-navbar *ngIf="isLoggedIn"></app-navbar>
 <router-outlet></router-outlet>
-<app-footer  *ngIf="isLoggedIn"></app-footer>
+<app-footer  *ngIf="isLoggedIn"></app-footer> -->
 
+<!-- 
+<div style="background-color: antiquewhite; border-radius: 5px;">
+  <app-parent></app-parent>
+</div>
+<hr>
+<div style="background-color: rgb(213, 247, 146); border-radius: 5px;">
+  <app-child [childMessage]="rootMessage"></app-child>
+</div>
+<hr>
+<div style="background-color: rgb(146, 188, 247); border-radius: 5px;">
+  <app-child></app-child>
+</div> -->
+
+<app-sender></app-sender>
+<hr>
+<app-receiver></app-receiver>

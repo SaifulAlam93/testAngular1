@@ -10,6 +10,7 @@ export class AppComponent implements OnInit{
   title = 'myEcom';
   isLoggedIn = true;
 
+  rootMessage= "Colling from root!";
   constructor(private router: Router) { }
   
   ngOnInit(): void {

@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./parent.component.scss']
 })
 export class ParentComponent {
+
   parentMessage = "Hello from Parent!";
 
 
   //c->P
-
-  message = "";
+  message = "Hello! Parents";
 
   receiveMessage($event: string) {
     this.message = $event;

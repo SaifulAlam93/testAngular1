@@ -8,14 +8,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ChildComponent {
 
   //P-> C
-  @Input() childMessage!: string;
+  @Input() childMessage: string = "I am from Child!!";
 
 
-  //C->P
+  // //C->P
   @Output() messageEvent = new EventEmitter<string>();
 
+  message = "";
+  
   sendMessage() {
-    this.messageEvent.emit("Hello from Child!");
+    this.messageEvent.emit(this.message);
   }
-
 }

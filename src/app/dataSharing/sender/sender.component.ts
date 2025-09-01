@@ -8,11 +8,12 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class SenderComponent {
   newMessage = "";
-  constructor(private shared: SharedService) { }
-
-  sendMessage() {
-    this.shared.updateMessage(this.newMessage);
+  constructor(private shared: SharedService) { 
   }
+
+  // sendMessage() {
+  //   this.shared.updateMessage(this.newMessage);
+  // }
 
   saveMessage() {
     localStorage.setItem("sharedMessage", this.newMessage);

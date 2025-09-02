@@ -22,6 +22,9 @@ import { ParentComponent } from './dataSharing/parent/parent.component';
 import { ChildComponent } from './dataSharing/child/child.component';
 import { SenderComponent } from './dataSharing/sender/sender.component';
 import { ReceiverComponent } from './dataSharing/receiver/receiver.component';
+import { HighlightDirective } from './highlight.directive';
+import { ExampleComponent } from './directives/example/example.component';
+import { ProductComponent } from './directives/product/product.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { ReceiverComponent } from './dataSharing/receiver/receiver.component';
     ParentComponent,
     ChildComponent,
     SenderComponent,
-    ReceiverComponent
+    ReceiverComponent,
+    HighlightDirective,
+    ExampleComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

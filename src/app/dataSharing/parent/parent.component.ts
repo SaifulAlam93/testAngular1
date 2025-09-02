@@ -9,7 +9,6 @@ export class ParentComponent {
 
   parentMessage = "Hello from Parent!";
 
-
   //c->P
   message = "Hello! Parents";
 

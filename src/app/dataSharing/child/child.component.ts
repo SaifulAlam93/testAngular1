@@ -10,7 +10,6 @@ export class ChildComponent {
   //P-> C
   @Input() childMessage: string = "I am from Child!!";
 
-
   // //C->P
   @Output() messageEvent = new EventEmitter<string>();
 

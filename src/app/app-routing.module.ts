@@ -11,10 +11,16 @@ import { LoginComponent } from './components/login/login.component';
 import { SingupComponent } from './components/singup/singup.component';
 import { UserAddEditComponent } from './components/user-add-edit/user-add-edit.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { HomeStandalonComponent } from './home-standalon/home-standalon.component';
+import { ExampleComponent } from './directives/example/example.component';
+import { ProductComponent } from './directives/product/product.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/d', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'd', component: ExampleComponent },
+  { path: 'products', component: ProductComponent },
+  { path: 'homeStandAlon', component: HomeStandalonComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'shop', component: ShopComponent },
@@ -24,11 +30,10 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent },
   { path: 'users/add', component: UserAddEditComponent },
   { path: 'users/edit/:id', component: UserAddEditComponent },
+  { path: 'students', loadChildren: () => import('./students/students.module').then(m => m.StudentsModule) },
+  { path: 'teachers', loadChildren: () => import('./teachers/teachers.module').then(m => m.TeachersModule) },
   { path: '**', component: ErrorPageComponent },
 ];
-
-
-
 
 // ,
 //     children: [
@@ -36,13 +41,7 @@ const routes: Routes = [
 //       { path: 'details/:id', component: ProductDetailsComponent }
 //     ]
 
-// const routes: Routes = [
-//   { path: '', redirectTo: '/home', pathMatch: 'full' }, // default route
-//   { path: 'home', component: HomeComponent },
-//   { path: 'about', component: AboutComponent },
-//   { path: 'contact', component: ContactComponent },
-//   { path: '**', component: PageNotFoundComponent }, // wildcard for 404
-// ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

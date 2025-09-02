@@ -1,0 +1,91 @@
+<!-- app.component.html -->
+
+<h2>🔹 Structural Directives Example</h2>
+
+<!-- ✅ *ngIf Example -->
+<div *ngIf="isLoggedIn; else loginBlock">
+  <p>Welcome back, Saiful! 🎉</p>
+</div>
+
+<ng-template #loginBlock>
+  <p>Please login to continue 🔑</p>
+</ng-template>
+
+<hr>
+<div class="container">
+  <h2>ngIf Else If Example</h2>
+
+  <button (click)="changeStatus()">Next Status</button>
+
+  <!-- Status check -->
+  <p *ngIf="status === 1; else status2">
+    Status is 1: Waiting...
+  </p>
+
+  <ng-template #status2>
+    <p *ngIf="status === 2; else status3">
+      Status is 2: Processing...
+    </p>
+  </ng-template>
+
+  <ng-template #status3>
+    <p>Status is 3: Completed!</p>
+  </ng-template>
+</div>
+
+
+<hr>
+
+<!-- ✅ *ngFor Example -->
+<h3>User List 👥</h3>
+<ul>
+  <li *ngFor="let v of users; index as i">
+    {{ i + 1 }}. {{ v }}
+  </li>
+</ul>
+<hr>
+
+
+
+
+<!-- ✅ *ngSwitch Example -->
+<h3>Role Based UI 👑</h3>
+<div *ngSwitch="role">
+  <p *ngSwitchCase="'admin'">You are an <b>Admin</b> – Full Access 🔧</p>
+  <p *ngSwitchCase="'user'">You are a <b>User</b> – Limited Access 📱</p>
+  <p *ngSwitchDefault>Guest Access – Please Sign Up 🙏</p>
+</div>
+
+
+
+
+--------hr
+<hr>
+
+<h2>🔹 ngStyle Example</h2>
+
+<p [ngStyle]="{'color': isActive ? 'green' : 'red', 'font-size': fontSize + 'px'}">
+  This text changes color and size dynamically 🎨sdsdsd
+</p>
+
+
+<button (click)="toggleActive()">Toggle Active</button>
+<button (click)="increaseFont()">Increase Font</button>
+
+
+<!-- app.component.html -->
+<h2>🔹 ngClass Example</h2>
+
+<p [ngClass]="{'active-text': isActive, 'inactive-text': !isActive}">
+  This text switches classes 🌀
+</p>
+
+
+<button (click)="toggleActive()">Toggle Class</button>
+
+
+<hr>
+
+<h2 [ngClass]="{'highlight': isActive}" [ngStyle]="{'font-size': fontSize + 'px'}">
+  Combo Example 🎯
+</h2>

@@ -13,8 +13,8 @@ export class ReceiverComponent implements OnInit {
   ngOnInit() {
     // this.shared['messageSource'].subscribe(msg => this.message = msg);
     // this.shared.currentMessage.subscribe(msg => this.message = msg);
-    // this.shared.messageSource.subscribe(msg => this.message = msg);
-    this.message = localStorage.getItem("sharedMessage") || "No Data Found";
+    this.shared.messageSource.subscribe(msg => this.message = msg);
+    // this.message = localStorage.getItem("sharedMessage") || "No Data Found";
   }
 
 

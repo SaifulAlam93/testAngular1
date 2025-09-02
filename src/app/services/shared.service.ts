@@ -5,9 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-
   public messageSource = new BehaviorSubject<string>("Default Message");
-
   updateMessage(message: string) {
     this.messageSource.next(message);
   }

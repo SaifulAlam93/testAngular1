@@ -11,9 +11,9 @@ export class SenderComponent {
   constructor(private shared: SharedService) { 
   }
 
-  // sendMessage() {
-  //   this.shared.updateMessage(this.newMessage);
-  // }
+  sendMessage() {
+    this.shared.updateMessage(this.newMessage);
+  }
 
   saveMessage() {
     localStorage.setItem("sharedMessage", this.newMessage);

@@ -14,9 +14,13 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { HomeStandalonComponent } from './home-standalon/home-standalon.component';
 import { ExampleComponent } from './directives/example/example.component';
 import { ProductComponent } from './directives/product/product.component';
+import { TeachersComponent } from './teachers/teachers.component';
+import { TeacherListComponent } from './teachers/teacher-list/teacher-list.component';
+import { TeacherDetailsComponent } from './teachers/teacher-details/teacher-details.component';
+import { StudentsComponent } from './students/students.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/d', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'd', component: ExampleComponent },
   { path: 'products', component: ProductComponent },
@@ -30,8 +34,22 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent },
   { path: 'users/add', component: UserAddEditComponent },
   { path: 'users/edit/:id', component: UserAddEditComponent },
-  { path: 'students', loadChildren: () => import('./students/students.module').then(m => m.StudentsModule) },
-  { path: 'teachers', loadChildren: () => import('./teachers/teachers.module').then(m => m.TeachersModule) },
+  { path: 'students', component:StudentsComponent, loadChildren: () => import('./students/students.module').then(m => m.StudentsModule) },
+  { path: 'teachers', component:TeachersComponent, loadChildren: () => import('./teachers/teachers.module').then(m => m.TeachersModule) },
+  
+  
+  
+  {
+    path: 'tea', component: TeachersComponent,
+    children: [
+      { path: '', redirectTo: '/list', pathMatch: 'full' },
+      { path: 'list', component: TeacherListComponent },
+      { path: 'details/:id', component: TeacherDetailsComponent }
+    ]
+  },
+
+
+
   { path: '**', component: ErrorPageComponent },
 ];
 

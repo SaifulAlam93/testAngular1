@@ -25,6 +25,7 @@ import { ReceiverComponent } from './dataSharing/receiver/receiver.component';
 import { HighlightDirective } from './highlight.directive';
 import { ExampleComponent } from './directives/example/example.component';
 import { ProductComponent } from './directives/product/product.component';
+import { NavTestComponent } from './components/nav-test/nav-test.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ProductComponent } from './directives/product/product.component';
     ReceiverComponent,
     HighlightDirective,
     ExampleComponent,
-    ProductComponent
+    ProductComponent,
+    NavTestComponent
   ],
   imports: [
     BrowserModule,
